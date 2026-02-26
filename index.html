@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0d1a" />
+  <meta name="description" content="A GitHub Pages showcase pushing static web technology to its limits." />
+  <link rel="manifest" href="manifest.json" />
+  <title>GitHub Page — Beyond Limits</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <span class="nav-logo">⬡ Beyond Limits</span>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#particles-demo">Particles</a></li>
+      <li><a href="#3d-demo">3D CSS</a></li>
+      <li><a href="#canvas-demo">Canvas</a></li>
+      <li><a href="#audio-demo">Audio</a></li>
+      <li><a href="#physics-demo">Physics</a></li>
+      <li><a href="#webgl-demo">WebGL</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="glitch" data-text="Beyond Limits">Beyond Limits</h1>
+      <p class="hero-sub">A GitHub Pages showcase — 100% static, infinitely dynamic</p>
+      <div class="hero-badges">
+        <span class="badge">Canvas API</span>
+        <span class="badge">CSS 3D</span>
+        <span class="badge">Web Audio</span>
+        <span class="badge">Physics Engine</span>
+        <span class="badge">PWA</span>
+        <span class="badge">WebGL</span>
+      </div>
+      <a href="#particles-demo" class="cta-btn">Explore ↓</a>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ===== PARTICLES DEMO ===== -->
+  <section id="particles-demo" class="demo-section">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Interactive Particle Network</h2>
+      <p class="section-desc reveal">Move your cursor over the canvas — particles react, connect, and repel in real time.</p>
+      <div class="canvas-wrapper reveal">
+        <canvas id="particle-canvas"></canvas>
+        <div class="canvas-controls">
+          <label>Count <input type="range" id="particle-count" min="30" max="250" value="120" /></label>
+          <label>Speed <input type="range" id="particle-speed" min="1" max="10" value="3" /></label>
+          <label>Connections <input type="range" id="particle-dist" min="60" max="200" value="120" /></label>
+          <button id="particle-reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3D CSS DEMO ===== -->
+  <section id="3d-demo" class="demo-section alt-bg">
+    <div class="section-inner">
+      <h2 class="section-title reveal">CSS 3D Scene</h2>
+      <p class="section-desc reveal">Pure CSS perspective transforms — no WebGL, no library.</p>
+      <div class="scene-wrapper reveal">
+        <div class="scene" id="css-scene">
+          <div class="cube" id="css-cube">
+            <div class="face front"><span>GitHub</span></div>
+            <div class="face back"><span>Pages</span></div>
+            <div class="face left"><span>Static</span></div>
+            <div class="face right"><span>Dynamic</span></div>
+            <div class="face top"><span>Beyond</span></div>
+            <div class="face bottom"><span>Limits</span></div>
+          </div>
+        </div>
+        <div class="scene-controls">
+          <button class="scene-btn" data-axis="x">Flip X</button>
+          <button class="scene-btn" data-axis="y">Flip Y</button>
+          <button class="scene-btn" data-axis="z">Flip Z</button>
+          <button class="scene-btn" id="auto-rotate-btn">Auto-Rotate: ON</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CANVAS ART DEMO ===== -->
+  <section id="canvas-demo" class="demo-section">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Generative Art Engine</h2>
+      <p class="section-desc reveal">Procedural patterns drawn fresh on every render — click to regenerate.</p>
+      <div class="canvas-wrapper reveal">
+        <canvas id="art-canvas"></canvas>
+        <div class="canvas-controls">
+          <button id="art-regen">Regenerate</button>
+          <button id="art-save">Save PNG</button>
+          <label>Style
+            <select id="art-style">
+              <option value="lissajous">Lissajous</option>
+              <option value="spirograph">Spirograph</option>
+              <option value="mandala">Mandala</option>
+              <option value="wave">Wave Field</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WEB AUDIO DEMO ===== -->
+  <section id="audio-demo" class="demo-section alt-bg">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Web Audio Synthesizer</h2>
+      <p class="section-desc reveal">A fully functional synthesizer built with the Web Audio API — play notes with your keyboard or click the keys.</p>
+      <div class="synth-wrapper reveal">
+        <div class="synth-controls">
+          <label>Waveform
+            <select id="wave-type">
+              <option value="sine">Sine</option>
+              <option value="square">Square</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="triangle">Triangle</option>
+            </select>
+          </label>
+          <label>Reverb <input type="range" id="reverb" min="0" max="1" step="0.01" value="0.2" /></label>
+          <label>Gain <input type="range" id="gain-ctrl" min="0" max="1" step="0.01" value="0.5" /></label>
+        </div>
+        <div class="piano" id="piano"></div>
+        <p class="piano-hint">Keyboard: A S D F G H J K L (white keys) | W E T Y U O (black keys)</p>
+        <canvas id="oscilloscope"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHYSICS DEMO ===== -->
+  <section id="physics-demo" class="demo-section">
+    <div class="section-inner">
+      <h2 class="section-title reveal">2D Physics Simulation</h2>
+      <p class="section-desc reveal">Click anywhere in the arena to spawn objects. Watch them collide, bounce, and stack.</p>
+      <div class="canvas-wrapper reveal">
+        <canvas id="physics-canvas"></canvas>
+        <div class="canvas-controls">
+          <button id="phys-clear">Clear</button>
+          <label>Gravity <input type="range" id="gravity-ctrl" min="0" max="2" step="0.1" value="0.5" /></label>
+          <label>Bounce <input type="range" id="bounce-ctrl" min="0" max="1" step="0.05" value="0.6" /></label>
+          <label>Shape
+            <select id="shape-select">
+              <option value="circle">Circle</option>
+              <option value="rect">Rectangle</option>
+              <option value="triangle">Triangle</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WEBGL DEMO ===== -->
+  <section id="webgl-demo" class="demo-section alt-bg">
+    <div class="section-inner">
+      <h2 class="section-title reveal">WebGL Shader Playground</h2>
+      <p class="section-desc reveal">A GLSL fragment shader running on the GPU — real-time procedural visuals with no libraries.</p>
+      <div class="canvas-wrapper reveal">
+        <canvas id="webgl-canvas"></canvas>
+        <div class="canvas-controls">
+          <label>Preset
+            <select id="shader-preset">
+              <option value="plasma">Plasma</option>
+              <option value="tunnel">Tunnel</option>
+              <option value="fractal">Fractal</option>
+            </select>
+          </label>
+          <label>Speed <input type="range" id="shader-speed" min="0.1" max="3" step="0.1" value="1" /></label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="demo-section alt-bg">
+    <div class="section-inner">
+      <h2 class="section-title reveal">What is this?</h2>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-icon">🎨</div>
+          <h3>Pure Static</h3>
+          <p>Zero build tools. Zero frameworks. Zero server. Everything runs entirely in the browser using vanilla HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon">⚡</div>
+          <h3>High Performance</h3>
+          <p>requestAnimationFrame loops, typed arrays, and offscreen compositing keep every demo running at 60 fps.</p>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon">📱</div>
+          <h3>PWA Ready</h3>
+          <p>Installable as a Progressive Web App with a web manifest — works offline via the browser cache.</p>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-icon">🔓</div>
+          <h3>Open Source</h3>
+          <p>Hosted on GitHub Pages. All source code is in this very repository — fork and explore!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>Made with ❤️ — Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
